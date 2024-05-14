@@ -24,7 +24,8 @@ interface Artist {
 })
 export class AppComponent {
   title = `Karaoke The Car's`;
-  csvUrl = 'assets/files/song-list.csv';
+  //csvUrl = './assets/files/song-list.csv';
+  csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=778459798&single=true&output=tsv';
   cols!: Column[];
   tableData: TreeNode[] = [];
   artists: string[] = [];
@@ -118,8 +119,8 @@ export class AppComponent {
   getArtistList(data: string) {
     for (const line of data.split(/[\r\n]+/)) {
       //console.log(line);
-      let artistElem = line.split('","')[0];
-      artistElem = artistElem.substring(1); // removing first double quotes
+      let artistElem = line.split('\t')[0];
+      //artistElem = artistElem.substring(1); // removing first double quotes
       if (artistElem && this.artists.indexOf(artistElem) === -1) {
         this.artists.push(artistElem);
       }
@@ -142,7 +143,7 @@ export class AppComponent {
       this.tableData.push(artistData);
     }
 
-    console.log(this.tableData);
+    //console.log(this.tableData);
     this.valid = true;
     this.isLoading = false;
   }
@@ -150,11 +151,11 @@ export class AppComponent {
   getArtistSongs(data: string, artist: string): string[] {
     var songList: string[] = [];
     for (const line of data.split(/[\r\n]+/)) {
-      let elem = line.split('","')[0];
-      let artistElem = elem.substring(1); // removing first double quotes
+      let elem = line.split('\t')[0];
+      let artistElem = elem; //.substring(1); // removing first double quotes
       if (artist === artistElem) {
-        var songElem = line.split('","')[1];
-        songElem = songElem.slice(0, -1);
+        var songElem = line.split('\t')[1];
+        //songElem = songElem.slice(0, -1);
         songList.push(songElem);
       }
     }
