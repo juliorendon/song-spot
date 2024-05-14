@@ -44,3 +44,6 @@ Thumbs.db
 # wrangler files
 .wrangler
 .dev.vars
+
+.vscode/*
+.editorconfig
