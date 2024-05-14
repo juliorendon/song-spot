@@ -25,7 +25,8 @@ interface Artist {
 export class AppComponent {
   title = `Karaoke The Car's`;
   //csvUrl = './assets/files/song-list.csv';
-  csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=778459798&single=true&output=tsv';
+  //csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=778459798&single=true&output=tsv';
+  csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1902819648&single=true&output=tsv';
   cols!: Column[];
   tableData: TreeNode[] = [];
   artists: string[] = [];
