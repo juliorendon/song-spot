@@ -4,7 +4,6 @@ import { RouterOutlet } from '@angular/router';
 import { TreeNode } from 'primeng/api/treenode';
 import { TreeTable, TreeTableModule } from 'primeng/treetable';
 import { HttpClient } from '@angular/common/http';
-import { NgxCsvParser, NgxCSVParserError } from 'ngx-csv-parser';
 
 interface Column {
   field: string;
@@ -23,82 +22,27 @@ interface Artist {
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  @ViewChild('tt') tt: TreeTable | undefined;
+
   title = `Karaoke The Car's`;
   //csvUrl = './assets/files/song-list.csv';
-  //csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=778459798&single=true&output=tsv';
-  csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1902819648&single=true&output=tsv';
+  csvUrl =
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1902819648&single=true&output=tsv';
+  
   cols!: Column[];
   tableData: TreeNode[] = [];
   artists: string[] = [];
-  csvRecords: any;
   filterMode = 'lenient';
-
+  
   valid: boolean = false;
   isLoading: boolean = true;
 
-  @ViewChild('tt') tt: TreeTable | undefined;
-
-  constructor(private http: HttpClient, private ngxCsvParser: NgxCsvParser) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.cols = [{ field: 'name', header: 'Canciones' }];
 
     this.readCsvData();
-
-    /*
-    this.tableData = [
-      {
-        data: {
-          name: 'Aerosmith',
-        },
-        children: [
-          {
-            data: {
-              name: 'Amazing',
-            },
-          },
-          {
-            data: {
-              name: 'Living on the Edge',
-            },
-          },
-        ],
-      },
-      {
-        data: {
-          name: 'Metallica',
-        },
-        children: [
-          {
-            data: {
-              name: 'Nothing Else Matters',
-            },
-          },
-          {
-            data: {
-              name: 'Unforgiven',
-            },
-          },
-        ],
-      },
-      {
-        data: {
-          name: 'Queen',
-        },
-        children: [
-          {
-            data: {
-              name: 'I want to break free',
-            },
-          },
-          {
-            data: {
-              name: 'We are the champions',
-            },
-          },
-        ],
-      },
-    ];*/
   }
 
   applyFilterGlobal($event: any, stringVal: any) {
@@ -163,30 +107,59 @@ export class AppComponent {
     return songList;
   }
 
+  // Artist and Songs Data Example:
   /*
-  readCsvData2() {
-    this.http.get(this.csvUrl, { responseType: 'text' }).subscribe({
-      next: (data) => {
-        
-        var blob = new Blob([data], {type: 'text/csv'});
-        var file = new File([blob], "foo.txt", {type: "text/csv"});
-        console.log(file);
-        this.ngxCsvParser.parse(file, { header: true, delimiter: ',', encoding: 'utf8' })
-        .pipe().subscribe({
-        next: (result): void => {
-          console.log('Result', result);
-          this.csvRecords = result;
+    this.tableData = [
+      {
+        data: {
+          name: 'Aerosmith',
         },
-        error: (error: NgxCSVParserError): void => {
-          console.log('Error', error);
-        }
-      });
-
+        children: [
+          {
+            data: {
+              name: 'Amazing',
+            },
+          },
+          {
+            data: {
+              name: 'Living on the Edge',
+            },
+          },
+        ],
       },
-      error: (err) => {
-        console.log(err);
+      {
+        data: {
+          name: 'Metallica',
+        },
+        children: [
+          {
+            data: {
+              name: 'Nothing Else Matters',
+            },
+          },
+          {
+            data: {
+              name: 'Unforgiven',
+            },
+          },
+        ],
       },
-    });
-  }
-  */
+      {
+        data: {
+          name: 'Queen',
+        },
+        children: [
+          {
+            data: {
+              name: 'I want to break free',
+            },
+          },
+          {
+            data: {
+              name: 'We are the champions',
+            },
+          },
+        ],
+      },
+    ];*/
 }
