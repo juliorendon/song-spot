@@ -2,22 +2,20 @@ import { NgFor, NgIf } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TreeNode } from 'primeng/api/treenode';
+import { SelectButtonModule } from 'primeng/selectbutton';
 import { TreeTable, TreeTableModule } from 'primeng/treetable';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 interface Column {
   field: string;
   header: string;
 }
-interface Artist {
-  data: { name: string };
-  children: [{ data: { name: string } }];
-}
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgIf, TreeTableModule],
+  imports: [RouterOutlet, NgFor, NgIf, TreeTableModule, SelectButtonModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -26,8 +24,8 @@ export class AppComponent {
 
   title = `Karaoke The Car's`;
   //csvUrl = './assets/files/song-list.csv';
-  csvUrl =
-    'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1902819648&single=true&output=tsv';
+  spanishSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=730419&single=true&output=tsv';
+  englishSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=2137679682&single=true&output=tsv';
   
   cols!: Column[];
   tableData: TreeNode[] = [];
@@ -37,20 +35,44 @@ export class AppComponent {
   valid: boolean = false;
   isLoading: boolean = true;
 
+  language: string = 'es';
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.cols = [{ field: 'name', header: 'Canciones' }];
 
-    this.readCsvData();
+    this.readCsvData(this.spanishSongs);
+  }
+
+  resetData() {
+    this.tableData = [];
+    this.artists = [];
+    this.valid = false;
+    this.isLoading = true;
+  }
+
+  manageLanguage(language: string) {
+    if(this.language !== language) {
+      this.language = language;
+    }
+
+    this.resetData();
+    if(this.language === 'es') {
+      console.log("spanish songs");
+      this.readCsvData(this.spanishSongs);
+    } else {
+      console.log("english songs");
+      this.readCsvData(this.englishSongs);
+    }
   }
 
   applyFilterGlobal($event: any, stringVal: any) {
     this.tt!.filterGlobal(($event.target as HTMLInputElement).value, stringVal);
   }
 
-  readCsvData() {
-    this.http.get(this.csvUrl, { responseType: 'text' }).subscribe({
+  readCsvData(songList: string) {
+    this.http.get(songList, { responseType: 'text' }).subscribe({
       next: (data) => {
         //console.log(data);
         this.getArtistList(data);
@@ -64,7 +86,7 @@ export class AppComponent {
   getArtistList(data: string) {
     for (const line of data.split(/[\r\n]+/)) {
       //console.log(line);
-      let artistElem = line.split('\t')[0];
+      var artistElem = line.split('\t')[0];
       //artistElem = artistElem.substring(1); // removing first double quotes
       if (artistElem && this.artists.indexOf(artistElem) === -1) {
         this.artists.push(artistElem);

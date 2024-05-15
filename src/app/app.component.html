@@ -2,11 +2,8 @@
   <div class="row">
     <div class="col">
       <h1>Karaoke The Car's</h1>
-      <img
-        src="/assets/imgs/banner1.jpg"
-        class="img-thumbnail rounded banner-image border border-0"
-        alt="Karaoke The Cars"
-      />
+      <img src="/assets/imgs/banner1.jpg" class="img-thumbnail rounded banner-image border border-0"
+        alt="Karaoke The Cars" />
       <!--
       <img
         src="/assets/imgs/banner3.jpg"
@@ -16,37 +13,36 @@
       -->
     </div>
   </div>
+
+
+  <div class="row mt-2 mb-3">
+    <div class="col">
+      <div class="btn-group-sm" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang1" autocomplete="off" checked (click)="manageLanguage('es')">
+        <label class="btn btn-outline-primary" for="btnlang1">
+          <img alt="language icon" src="/assets/imgs/spanish.png" style="height: 45px;"/>
+        </label>
+      
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang2" autocomplete="off" (click)="manageLanguage('en')">
+        <label class="btn btn-outline-primary" for="btnlang2">
+          <img alt="language icon" src="/assets/imgs/english.png" style="height: 45px;"/>
+        </label>
+      </div>
+    </div>
+  </div>
+  {{language}}
+
   <div class="row">
     <div class="col">
-      <div
-        *ngIf="isLoading"
-        style="width: 3rem; height: 3rem"
-        class="spinner-border text-primary mt-5"
-        role="status"
-      >
+      <div *ngIf="isLoading" style="width: 3rem; height: 3rem" class="spinner-border text-primary mt-5" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
 
-      <p-treeTable
-        *ngIf="valid"
-        #tt
-        paginatorLocale="es-ES"
-        [loading]="isLoading"
-        [columns]="cols"
-        [value]="tableData"
-        [scrollable]="true"
-        [paginator]="true"
-        [rows]="5"
-        [rowsPerPageOptions]="[5, 10, 25]"
-        [filterMode]="filterMode"
-      >
+      <p-treeTable *ngIf="valid" #tt paginatorLocale="es-ES" [loading]="isLoading" [columns]="cols" [value]="tableData"
+        [scrollable]="true" [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5, 10, 25]" [filterMode]="filterMode">
         <ng-template pTemplate="caption">
-          <input
-            type="text"
-            pInputText
-            (input)="tt.filterGlobal($any($event.target)?.value, 'contains')"
-            placeholder="Buscar"
-          />
+          <input type="text" pInputText (input)="tt.filterGlobal($any($event.target)?.value, 'contains')"
+            placeholder="Buscar" />
         </ng-template>
         <ng-template pTemplate="header" let-columns>
           <tr>
@@ -56,12 +52,7 @@
             </th>
           </tr>
         </ng-template>
-        <ng-template
-          pTemplate="body"
-          let-rowNode
-          let-rowData="rowData"
-          let-columns="columns"
-        >
+        <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
           <tr [ttRow]="rowNode">
             <td>
               <p-treeTableToggler [rowNode]="rowNode" />
@@ -71,7 +62,10 @@
         </ng-template>
         <ng-template pTemplate="emptymessage">
           <tr>
-            <td [attr.colspan]="cols.length">La canción que buscas aún no la tenemos😱, comentamélo y la agregamos a la lista 😎</td>
+            <td [attr.colspan]="cols.length">
+              La canción que buscas aún no la tenemos😱, comentamélo y la
+              agregamos a la lista 😎
+            </td>
           </tr>
         </ng-template>
       </p-treeTable>

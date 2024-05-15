@@ -1,10 +1,13 @@
 * {
-    font-family: 'PoetsenOne', 'arial', sans-serif;
+    font-family: 'PoetsenOne', 'arial', sans-serif, fantasy;
 }
 
 .banner-image {
     height: 250px;
 }
 
+.icon{
+    font-family: 'primeicons';
+}
 
 
