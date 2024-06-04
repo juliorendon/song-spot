@@ -50,7 +50,7 @@ export class AppComponent {
   ngOnInit() {
     this.cols = [{ field: 'name', header: 'Canciones' }];
     this.readCsvData(this.spanishSongs);
-    this.bannerImage = `/assets/imgs/banner${this.getRandomNumber(4)}.jpg`;
+    //this.bannerImage = `/assets/imgs/banner${this.getRandomNumber(4)}.jpg`;
   }
 
   resetData() {
