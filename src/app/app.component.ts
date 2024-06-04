@@ -26,7 +26,10 @@ export class AppComponent {
   //csvUrl = './assets/files/song-list.csv';
   spanishSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=730419&single=true&output=tsv';
   englishSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=2137679682&single=true&output=tsv';
-  
+  otherSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=913092974&single=true&output=tsv';
+
+  bannerImage = '/assets/imgs/banner0.jpg';
+
   cols!: Column[];
   tableData: TreeNode[] = [];
   artists: string[] = [];
@@ -35,14 +38,19 @@ export class AppComponent {
   valid: boolean = false;
   isLoading: boolean = true;
 
+  SPANISH_SONGS = 'Canciones en Español';
+  ENGLISH_SONGS = 'Canciones en Inglés';
+  OTHER_SONGS = 'Canciones en Otros Idiomas';
+
   language: string = 'es';
+  languageMessage: string = this.SPANISH_SONGS;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.cols = [{ field: 'name', header: 'Canciones' }];
-
     this.readCsvData(this.spanishSongs);
+    this.bannerImage = `/assets/imgs/banner${this.getRandomNumber(4)}.jpg`;
   }
 
   resetData() {
@@ -60,10 +68,16 @@ export class AppComponent {
     this.resetData();
     if(this.language === 'es') {
       console.log("spanish songs");
+      this.languageMessage = this.SPANISH_SONGS;
       this.readCsvData(this.spanishSongs);
-    } else {
+    } else if(this.language === 'en') {
       console.log("english songs");
+      this.languageMessage = this.ENGLISH_SONGS;
       this.readCsvData(this.englishSongs);
+    } else {
+      console.log("other language songs");
+      this.languageMessage = this.OTHER_SONGS;
+      this.readCsvData(this.otherSongs);
     }
   }
 
@@ -127,6 +141,11 @@ export class AppComponent {
       }
     }
     return songList;
+  }
+
+  // Returns random number between 0 and limit-1
+  getRandomNumber(limit: number) {
+    return Math.floor(Math.random() * limit);
   }
 
   // Artist and Songs Data Example:

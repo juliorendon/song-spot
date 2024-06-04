@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col">
       <h1>Karaoke The Car's</h1>
-      <img src="/assets/imgs/banner1.jpg" class="img-thumbnail rounded banner-image border border-0"
+      <img [src]="bannerImage" class="img-thumbnail rounded banner-image border border-0"
         alt="Karaoke The Cars" />
       <!--
       <img
@@ -27,10 +27,15 @@
         <label class="btn btn-outline-primary" for="btnlang2">
           <img alt="language icon" src="/assets/imgs/english.png" style="height: 45px;"/>
         </label>
+
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang3" autocomplete="off" (click)="manageLanguage('other')">
+        <label class="btn btn-outline-primary" for="btnlang3">
+          <img alt="language icon" src="/assets/imgs/other.png" style="height: 45px;"/>
+        </label>
       </div>
     </div>
   </div>
-  {{language}}
+  {{languageMessage}}
 
   <div class="row">
     <div class="col">
