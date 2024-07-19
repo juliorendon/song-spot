@@ -8,7 +8,7 @@
   </div>
 
 
-  <div class="row mt-2 mb-3">
+  <div class="row mt-2">
     <div class="col">
       <div class="btn-group-sm" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnlang" id="btnlang1" autocomplete="off" checked (click)="manageLanguage('es')">
@@ -21,6 +21,26 @@
           <img alt="language icon" src="/assets/imgs/english.png" style="height: 45px;"/>
         </label>
 
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang7" autocomplete="off" (click)="manageLanguage('eu')">
+        <label class="btn btn-outline-primary" for="btnlang7">
+          <img alt="language icon" src="/assets/imgs/euskera.png" style="height: 45px;"/>
+        </label>
+
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang4" autocomplete="off" (click)="manageLanguage('de')">
+        <label class="btn btn-outline-primary" for="btnlang4">
+          <img alt="language icon" src="/assets/imgs/german.png" style="height: 45px;"/>
+        </label>
+      
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang5" autocomplete="off" (click)="manageLanguage('it')">
+        <label class="btn btn-outline-primary" for="btnlang5">
+          <img alt="language icon" src="/assets/imgs/italian.png" style="height: 45px;"/>
+        </label>
+
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang6" autocomplete="off" (click)="manageLanguage('fr')">
+        <label class="btn btn-outline-primary" for="btnlang6">
+          <img alt="language icon" src="/assets/imgs/french.png" style="height: 45px;"/>
+        </label>
+
         <input type="radio" class="btn-check" name="btnlang" id="btnlang3" autocomplete="off" (click)="manageLanguage('other')">
         <label class="btn btn-outline-primary" for="btnlang3">
           <img alt="language icon" src="/assets/imgs/other.png" style="height: 45px;"/>
@@ -28,6 +48,7 @@
       </div>
     </div>
   </div>
+
   {{languageMessage}}
 
   <div class="row">
@@ -61,8 +82,7 @@
         <ng-template pTemplate="emptymessage">
           <tr>
             <td [attr.colspan]="cols.length">
-              La canción que buscas aún no la tenemos😱, comentamélo y la
-              agregamos a la lista 😎
+              {{ songNotFoundMessage }}
             </td>
           </tr>
         </ng-template>

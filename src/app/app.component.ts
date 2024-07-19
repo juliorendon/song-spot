@@ -26,6 +26,10 @@ export class AppComponent {
   //csvUrl = './assets/files/song-list.csv';
   spanishSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=730419&single=true&output=tsv';
   englishSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=2137679682&single=true&output=tsv';
+  euskeraSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=590437772&single=true&output=tsv';
+  germanSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=271881415&single=true&output=tsv';
+  italianSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=903529757&single=true&output=tsv';
+  frenchSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1501217040&single=true&output=tsv';
   otherSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=913092974&single=true&output=tsv';
 
   bannerImage = '/assets/imgs/banner0.jpg';
@@ -40,10 +44,19 @@ export class AppComponent {
 
   SPANISH_SONGS = 'Canciones en Español';
   ENGLISH_SONGS = 'Canciones en Inglés';
+  GERMAN_SONGS = 'Canciones en Alemán';
+  ITALIAN_SONGS = 'Canciones en Italiano';
+  FRENCH_SONGS = 'Canciones en Francés';
+  EUSKERA_SONGS = 'Canciones en Euskera';
   OTHER_SONGS = 'Canciones en Otros Idiomas';
 
   language: string = 'es';
   languageMessage: string = this.SPANISH_SONGS;
+
+  // Messages
+  songNotFoundMessage = '';
+  SONG_NOT_FOUND_ES = 'La canción que buscas aún no la tenemos😱, comentamélo y la agregamos a la lista 😎';
+  SONG_NOT_FOUND_EN = `We don't have the song you're looking for yet😱, please tell me and I'll add it to the list 😎`;
 
   constructor(private http: HttpClient) {}
 
@@ -51,6 +64,7 @@ export class AppComponent {
     this.cols = [{ field: 'name', header: 'Canciones' }];
     this.readCsvData(this.spanishSongs);
     this.bannerImage = `/assets/imgs/banner${this.getRandomNumber(4)}.jpg`;
+    this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;
   }
 
   resetData() {
@@ -66,18 +80,41 @@ export class AppComponent {
     }
 
     this.resetData();
-    if(this.language === 'es') {
-      console.log("spanish songs");
+    if (this.language === 'es') {
+      console.log('spanish songs');
       this.languageMessage = this.SPANISH_SONGS;
       this.readCsvData(this.spanishSongs);
-    } else if(this.language === 'en') {
-      console.log("english songs");
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;
+    } else if (this.language === 'en') {
+      console.log('english songs');
       this.languageMessage = this.ENGLISH_SONGS;
       this.readCsvData(this.englishSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'eu') {
+      console.log('euskera songs');
+      this.languageMessage = this.EUSKERA_SONGS;
+      this.readCsvData(this.euskeraSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;
+    } else if (this.language === 'de') {
+      console.log('german songs');
+      this.languageMessage = this.GERMAN_SONGS;
+      this.readCsvData(this.germanSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'it') {
+      console.log('italian songs');
+      this.languageMessage = this.ITALIAN_SONGS;
+      this.readCsvData(this.italianSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'fr') {
+      console.log('french songs');
+      this.languageMessage = this.FRENCH_SONGS;
+      this.readCsvData(this.frenchSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
     } else {
-      console.log("other language songs");
+      console.log('other language songs');
       this.languageMessage = this.OTHER_SONGS;
       this.readCsvData(this.otherSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
     }
   }
 
