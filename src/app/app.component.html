@@ -11,32 +11,32 @@
   <div class="row mt-2">
     <div class="col">
       <div class="btn-group-sm" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnlang" id="btnlang1" autocomplete="off" checked (click)="manageLanguage('es')">
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang1" autocomplete="off" [checked]="language == 'es'" (click)="manageLanguage('es')">
         <label class="btn btn-outline-primary" for="btnlang1">
           <img alt="language icon" src="/assets/imgs/spanish.png" style="height: 45px;"/>
         </label>
       
-        <input type="radio" class="btn-check" name="btnlang" id="btnlang2" autocomplete="off" (click)="manageLanguage('en')">
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang2" autocomplete="off" [checked]="language == 'en'"  (click)="manageLanguage('en')">
         <label class="btn btn-outline-primary" for="btnlang2">
           <img alt="language icon" src="/assets/imgs/english.png" style="height: 45px;"/>
         </label>
 
-        <input type="radio" class="btn-check" name="btnlang" id="btnlang7" autocomplete="off" (click)="manageLanguage('eu')">
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang7" autocomplete="off" [checked]="language == 'eu'" (click)="manageLanguage('eu')">
         <label class="btn btn-outline-primary" for="btnlang7">
           <img alt="language icon" src="/assets/imgs/euskera.png" style="height: 45px;"/>
         </label>
 
-        <input type="radio" class="btn-check" name="btnlang" id="btnlang4" autocomplete="off" (click)="manageLanguage('de')">
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang4" autocomplete="off" [checked]="language == 'de'" (click)="manageLanguage('de')">
         <label class="btn btn-outline-primary" for="btnlang4">
           <img alt="language icon" src="/assets/imgs/german.png" style="height: 45px;"/>
         </label>
       
-        <input type="radio" class="btn-check" name="btnlang" id="btnlang5" autocomplete="off" (click)="manageLanguage('it')">
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang5" autocomplete="off" [checked]="language == 'it'" (click)="manageLanguage('it')">
         <label class="btn btn-outline-primary" for="btnlang5">
           <img alt="language icon" src="/assets/imgs/italian.png" style="height: 45px;"/>
         </label>
 
-        <input type="radio" class="btn-check" name="btnlang" id="btnlang6" autocomplete="off" (click)="manageLanguage('fr')">
+        <input type="radio" class="btn-check" name="btnlang" id="btnlang6" autocomplete="off" [checked]="language == 'fr'" (click)="manageLanguage('fr')">
         <label class="btn btn-outline-primary" for="btnlang6">
           <img alt="language icon" src="/assets/imgs/french.png" style="height: 45px;"/>
         </label>
@@ -45,6 +45,30 @@
         <label class="btn btn-outline-primary" for="btnlang3">
           <img alt="language icon" src="/assets/imgs/other.png" style="height: 45px;"/>
         </label>
+
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <img alt="language icon" src="/assets/imgs/multi-lang.jpg" style="height: 45px;"/>
+          </button>
+          <ul class="dropdown-menu">
+            <li (click)="manageLanguage('as')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/asturias.png" style="height: 45px;"/><span style="margin-left: 2px;">{{ASTURIAS_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('be')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/belgium.png" style="height: 45px;"/><span style="margin-left: 2px;">{{BELGICA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('ch')"><a class="dropdown-item btn btn-light" href="#"><img alt="language icon" src="/assets/imgs/china.png" style="height: 45px;"/><span style="margin-left: 2px;">{{CHINA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('ca')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/catalunya.png" style="height: 45px;"/><span style="margin-left: 2px;">{{CATALUNYA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('fi')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/finland.png" style="height: 45px;"/><span style="margin-left: 2px;">{{FINLAND_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('ga')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/galicia.png" style="height: 45px;"/><span style="margin-left: 2px;">{{GALICIA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('in')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/india.png" style="height: 45px;"/><span style="margin-left: 2px;">{{INDIA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('ja')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/japan.png" style="height: 45px;"/><span style="margin-left: 2px;">{{JAPAN_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('ko')"><a class="dropdown-item btn btn-light" href="#"><img alt="language icon" src="/assets/imgs/korea.png" style="height: 45px;"/><span style="margin-left: 2px;">{{KOREA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('ne')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/netherlands.png" style="height: 45px;"/><span style="margin-left: 2px;">{{NETHERLANDS_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('pol')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/poland.png" style="height: 45px;"/><span style="margin-left: 2px;">{{POLAND_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('por')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/portugal.png" style="height: 45px;"/><span style="margin-left: 2px;">{{PORTUGAL_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('rum')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/rumania.png" style="height: 45px;"/><span style="margin-left: 2px;">{{RUMANIA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('rus')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/rusia.png" style="height: 45px;"/><span style="margin-left: 2px;">{{RUSIA_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('tu')"><a class="dropdown-item btn btn-light" href="#" ><img alt="language icon" src="/assets/imgs/turkey.png" style="height: 45px;"/><span style="margin-left: 2px;">{{TURKEY_SONGS}}</span></a></li>
+            <li (click)="manageLanguage('ukr')"><a class="dropdown-item btn btn-light" href="#"><img alt="language icon" src="/assets/imgs/ukraine.png" style="height: 45px;"/><span style="margin-left: 2px;">{{UKRAINE_SONGS}}</span></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

@@ -32,6 +32,23 @@ export class AppComponent {
   frenchSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1501217040&single=true&output=tsv';
   otherSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=913092974&single=true&output=tsv';
 
+  asturiasSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=910579196&single=true&output=tsv';
+  belgicaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=41944273&single=true&output=tsv';
+  catalanSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1524047562&single=true&output=tsv';
+  chinoSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=2068845876&single=true&output=tsv';
+  koreaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=282641549&single=true&output=tsv';
+  finlandiaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1597433517&single=true&output=tsv';
+  galiciaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1307451105&single=true&output=tsv';
+  holandaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=678876614&single=true&output=tsv';
+  indiaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1350709274&single=true&output=tsv';
+  japonSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1774750703&single=true&output=tsv';
+  poloniaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=342732063&single=true&output=tsv';
+  portuguesSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1855198939&single=true&output=tsv';
+  rumaniaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=2111641107&single=true&output=tsv';
+  rusiaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=55220638&single=true&output=tsv';
+  turkeySongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=11619473&single=true&output=tsv';
+  ukraineSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=2031158690&single=true&output=tsv';
+
   bannerImage = '/assets/imgs/banner0.jpg';
 
   cols!: Column[];
@@ -49,6 +66,23 @@ export class AppComponent {
   FRENCH_SONGS = 'Canciones en Francés';
   EUSKERA_SONGS = 'Canciones en Euskera';
   OTHER_SONGS = 'Canciones en Otros Idiomas';
+
+  ASTURIAS_SONGS = 'Canciones en Asturiano';
+  BELGICA_SONGS = 'Canciones en Belga';
+  CHINA_SONGS = 'Canciones en Chino';
+  CATALUNYA_SONGS = 'Canciones en Catalán';
+  FINLAND_SONGS = 'Canciones en Finlandés';
+  GALICIA_SONGS = 'Canciones en Gallego';
+  INDIA_SONGS = 'Canciones en Hindú';
+  JAPAN_SONGS = 'Canciones en Japonés';
+  KOREA_SONGS = 'Canciones en Coreano';
+  NETHERLANDS_SONGS = 'Canciones en Holandés';
+  POLAND_SONGS = 'Canciones en Polaco';
+  PORTUGAL_SONGS = 'Canciones en Portugués';
+  RUMANIA_SONGS = 'Canciones en Rumano';
+  RUSIA_SONGS = 'Canciones en Ruso';
+  TURKEY_SONGS = 'Canciones en Turco';
+  UKRAINE_SONGS = 'Canciones en Ucraniano';
 
   language: string = 'es';
   languageMessage: string = this.SPANISH_SONGS;
@@ -109,6 +143,86 @@ export class AppComponent {
       console.log('french songs');
       this.languageMessage = this.FRENCH_SONGS;
       this.readCsvData(this.frenchSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'as') {
+      console.log('asturias songs');
+      this.languageMessage = this.ASTURIAS_SONGS;
+      this.readCsvData(this.asturiasSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;
+    } else if (this.language === 'be') {
+      console.log('belgica songs');
+      this.languageMessage = this.BELGICA_SONGS;
+      this.readCsvData(this.belgicaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'ca') {
+      console.log('catalan songs');
+      this.languageMessage = this.CATALUNYA_SONGS;
+      this.readCsvData(this.catalanSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;
+    } else if (this.language === 'ch') {
+      console.log('china songs');
+      this.languageMessage = this.CHINA_SONGS;
+      this.readCsvData(this.chinoSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'ko') {
+      console.log('korea songs');
+      this.languageMessage = this.KOREA_SONGS;
+      this.readCsvData(this.koreaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'fi') {
+      console.log('finlandia songs');
+      this.languageMessage = this.FINLAND_SONGS;
+      this.readCsvData(this.finlandiaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'ga') {
+      console.log('galicia songs');
+      this.languageMessage = this.GALICIA_SONGS;
+      this.readCsvData(this.galiciaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;
+    } else if (this.language === 'ne') {
+      console.log('holanda songs');
+      this.languageMessage = this.NETHERLANDS_SONGS;
+      this.readCsvData(this.holandaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'in') {
+      console.log('asturias songs');
+      this.languageMessage = this.INDIA_SONGS;
+      this.readCsvData(this.indiaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'ja') {
+      console.log('japon songs');
+      this.languageMessage = this.JAPAN_SONGS;
+      this.readCsvData(this.japonSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'pol') {
+      console.log('polonia songs');
+      this.languageMessage = this.POLAND_SONGS;
+      this.readCsvData(this.poloniaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'por') {
+      console.log('portugues songs');
+      this.languageMessage = this.PORTUGAL_SONGS;
+      this.readCsvData(this.portuguesSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;
+    } else if (this.language === 'rum') {
+      console.log('rumania songs');
+      this.languageMessage = this.RUMANIA_SONGS;
+      this.readCsvData(this.rumaniaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'rus') {
+      console.log('rusia songs');
+      this.languageMessage = this.RUSIA_SONGS;
+      this.readCsvData(this.rusiaSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'tu') {
+      console.log('turkey songs');
+      this.languageMessage = this.TURKEY_SONGS;
+      this.readCsvData(this.turkeySongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'ukr') {
+      console.log('ukraine songs');
+      this.languageMessage = this.UKRAINE_SONGS;
+      this.readCsvData(this.ukraineSongs);
       this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
     } else {
       console.log('other language songs');
