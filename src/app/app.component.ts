@@ -32,6 +32,7 @@ export class AppComponent {
   frenchSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1501217040&single=true&output=tsv';
   otherSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=913092974&single=true&output=tsv';
 
+  arabeSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=809212386&single=true&output=tsv';
   asturiasSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=910579196&single=true&output=tsv';
   belgicaSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=41944273&single=true&output=tsv';
   catalanSongs = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6ZGLb5c1-fYWhcVaFuQ_7HRJ6JF132NYylDo8JOD-p6mG_oDa2Y1vnyZW_6o4taEQeBTMCMqJKvJQ/pub?gid=1524047562&single=true&output=tsv';
@@ -67,6 +68,7 @@ export class AppComponent {
   EUSKERA_SONGS = 'Canciones en Euskera';
   OTHER_SONGS = 'Canciones en Otros Idiomas';
 
+  ARABE_SONGS = 'Canciones en Árabe';
   ASTURIAS_SONGS = 'Canciones en Asturiano';
   BELGICA_SONGS = 'Canciones en Belga';
   CHINA_SONGS = 'Canciones en Chino';
@@ -144,6 +146,11 @@ export class AppComponent {
       this.languageMessage = this.FRENCH_SONGS;
       this.readCsvData(this.frenchSongs);
       this.songNotFoundMessage = this.SONG_NOT_FOUND_EN;
+    } else if (this.language === 'ar') {
+      console.log('arabe songs');
+      this.languageMessage = this.ARABE_SONGS;
+      this.readCsvData(this.arabeSongs);
+      this.songNotFoundMessage = this.SONG_NOT_FOUND_ES;        
     } else if (this.language === 'as') {
       console.log('asturias songs');
       this.languageMessage = this.ASTURIAS_SONGS;
